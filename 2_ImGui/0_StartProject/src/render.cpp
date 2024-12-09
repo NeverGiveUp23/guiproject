@@ -15,6 +15,14 @@ void WindowClass::Draw(std::string_view label)
 
     // ImGui works like atack -> pushing the window on the stack.
     ImGui::Begin(label.data(), nullptr, window_flags); // stack size 1 // Putting in and testing window flags for project
+
+
+    int open_action = -1;
+
+    if (ImGui::Button("Open All"))
+        open_action = 1;
+    ImGui::SameLine();
+
     ImGui::Begin("Felix"); // stack size 2
 
     // stack size must be the same as the entrance of the program. Begin()
