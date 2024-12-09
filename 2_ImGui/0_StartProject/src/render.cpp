@@ -9,25 +9,43 @@
 void WindowClass::Draw(std::string_view label)
 { // stack size 0
 
-    constexpr static auto window_flags = ImGuiWindowFlags_NoMove; // flags for the window to not move for the user (Test)
+   
+    constexpr static auto window_flags =
+        ImGuiWindowFlags_NoMove; // flags for the window to not move for the user (Test)
     constexpr static auto windowSize = ImVec2(0.0F, 0.0F);
     ImGui::SetNextWindowPos(windowSize); // adjusting the window size
 
     // ImGui works like atack -> pushing the window on the stack.
-    ImGui::Begin(label.data(), nullptr, window_flags); // stack size 1 // Putting in and testing window flags for project
+    ImGui::Begin(
+        label.data(),
+        nullptr,
+        window_flags); // stack size 1 // Putting in and testing window flags for project
 
-
-    int open_action = -1;
-
-    if (ImGui::Button("Open All"))
-        open_action = 1;
-    ImGui::SameLine();
-
-    ImGui::Begin("Felix"); // stack size 2
+    DrawMenu();
+    DrawContent();
+    DrawActions();
+    DrawFilter(); // Filter file extenstion -> Ex. How many .txt in the dirrectory
 
     // stack size must be the same as the entrance of the program. Begin()
-    ImGui::End(); // stack size decrement by 1  -> will result in stack error if no othe end method when calling multiple begin methods
-    ImGui::End();
+    ImGui::
+        End(); // stack size decrement by 1  -> will result in stack error if no othe end method when calling multiple begin methods
+}
+
+
+void WindowClass::DrawMenu()
+{
+    ImGui::Text("Hello Menu");
+}
+
+void WindowClass::DrawContent()
+{
+}
+void WindowClass::DrawActions()
+{
+}
+
+void WindowClass::DrawFilter()
+{
 }
 
 void render(WindowClass &window_obj)

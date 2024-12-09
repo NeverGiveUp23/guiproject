@@ -1,0 +1,8 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "2_ImGui\\0_StartProject\\out\\build\\x64-Debug",
+      "2_ImGui\\0_StartProject\\out\\install\\x64-Debug"
+    ]
+  }
+}
