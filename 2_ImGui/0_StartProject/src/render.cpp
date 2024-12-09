@@ -7,18 +7,18 @@
 #include "render.hpp"
 
 void WindowClass::Draw(std::string_view label)
-{
-    constexpr static auto window_flags =
-        ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-        ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoScrollbar;
-    constexpr static auto window_size = ImVec2(1280.0F, 720.0F);
-    constexpr static auto window_pos = ImVec2(0.0F, 0.0F);
+{ // stack size 0
 
-    ImGui::SetNextWindowSize(window_size);
-    ImGui::SetNextWindowPos(window_pos);
+    constexpr static auto window_flags = ImGuiWindowFlags_NoMove; // flags for the window to not move for the user (Test)
+    constexpr static auto windowSize = ImVec2(0.0F, 0.0F);
+    ImGui::SetNextWindowPos(windowSize); // adjusting the window size
 
-    ImGui::Begin(label.data(), nullptr, window_flags);
+    // ImGui works like atack -> pushing the window on the stack.
+    ImGui::Begin(label.data(), nullptr, window_flags); // stack size 1 // Putting in and testing window flags for project
+    ImGui::Begin("Felix"); // stack size 2
 
+    // stack size must be the same as the entrance of the program. Begin()
+    ImGui::End(); // stack size decrement by 1  -> will result in stack error if no othe end method when calling multiple begin methods
     ImGui::End();
 }
 
