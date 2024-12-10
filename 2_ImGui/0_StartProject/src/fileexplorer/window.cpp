@@ -16,25 +16,18 @@ void WindowClass::DrawContent()
         const auto is_File = entry.is_regular_file();
         auto entry_name = entry.path().filename().string();
 
-        if (is_Dir)
-        {
+        if (is_Dir) {
             entry_name = "[D]: " + entry_name;
-        }
-        else if (is_File)
-        {
+        }else if (is_File) {
             entry_name = "[F]: " + entry_name;
         }
 
         if (ImGui::Selectable(
                 entry_name.c_str(),
-                is_selected)) // display just the last portion of the file path -> and just want to output a string
-        {
-            if (is_Dir)
-            {
+                is_selected)) { // display just the last portion of the file path -> and just want to output a string
+            if (is_Dir){
                 currentDir /= entry.path().filename();
-            }
-            else
-            {
+            } else {
                 select_Entry = entry.path();
             }
         }
@@ -46,10 +39,8 @@ void WindowClass::DrawMenu()
 {
     ImGui::Text("Hello Menu");
     // when button is clicked -> adjusting button size
-    if (ImGui::Button("Up"))
-    {
-        if (currentDir
-                .has_parent_path()) // checking if user is at the root level
+    if (ImGui::Button("Up")){
+        if (currentDir.has_parent_path()) // checking if user is at the root level
         {
             currentDir = currentDir.parent_path();
         }
@@ -73,41 +64,38 @@ void WindowClass::DrawMenu()
 void WindowClass::DrawActions()
 {
     // display current selected Dir
-    if (fs::is_directory(select_Entry))
-    {
+    if (fs::is_directory(select_Entry)) {
         ImGui::Text("Selected Dir: %s", select_Entry.string().c_str());
     }
     // display if selected a file
-    else if (fs::is_regular_file(select_Entry))
-    {
+    else if (fs::is_regular_file(select_Entry)) {
         ImGui::Text("Selected file: %s", select_Entry.string().c_str());
     }
-    else
-    {
+    else {
         ImGui::Text("Nothing Selected");
     }
 
     // buttons
     // specific button to rename a file
-    if (ImGui::Button("Rename"))
-    {
+    if (ImGui::Button("Rename")) {
+        renameDialogOpen = true;
         ImGui::OpenPopup("Rename File"); // popup once clicked
     }
+    renameFilePopup();
 
     ImGui::SameLine();
 
-    if (ImGui::Button("Delete"))
-    {
+    if (ImGui::Button("Delete")) {
+        deleteDialogOpen = true;
         ImGui::OpenPopup("Delete File");
     }
+    deleteFilePopup();
 
-    if (fs::is_regular_file(select_Entry) && ImGui::Button("Open"))
-    { //checking if the selected is a file to be opened
+    if (fs::is_regular_file(select_Entry) && ImGui::Button("Open")) { //checking if the selected is a file to be opened
         OpenFileWDefaultEditor(); // allowing the file to be opened by editor like Notepad++ for example.
     }
 
-    renameFilePopup();
-    deleteFilePopup();
+    
 }
 
 void WindowClass::DrawFilter()
@@ -141,8 +129,7 @@ void WindowClass::DrawFilter()
 
     //  count variable for # of files in dir
     auto filter_count = std::size_t{0};
-    for (const auto &entry : fs::directory_iterator(
-             currentDir)) // iterate thought the entrie directory
+    for (const auto &entry : fs::directory_iterator( currentDir)) // iterate thought the entrie directory
     {
         // if not a file, just ignore and continue
         if (!fs::is_regular_file(entry))
@@ -165,10 +152,10 @@ void WindowClass::OpenFileWDefaultEditor()
 
 void WindowClass::renameFilePopup()
 {
-
+    static bool dialog_open = false;
 
     // Begin the pop button for renaming -> checking if need to rename -> name needs to be the same from ImGui::PopUpModal("") from within the codebase
-    if (ImGui::BeginPopupModal("Rename File"))
+    if (ImGui::BeginPopupModal("Rename File", &renameDialogOpen))
     {
         // array for the total char for the new name
         static char buffer_name[250] = {'\0'};
@@ -180,6 +167,19 @@ void WindowClass::renameFilePopup()
             sizeof(
                 buffer_name)); // giving it the size and variable to store name in
 
+
+        if (ImGui::Button("Rename"))
+        {
+            auto new_filename = select_Entry.parent_path() / buffer_name;
+            if (renameFile(select_Entry, new_filename))
+            {
+                renameDialogOpen = false;
+                select_Entry = new_filename;
+                std::memset(buffer_name, 0, sizeof(0)); // return input box back to 0 -> as in empty string ""
+            }
+        }
+        ImGui::SameLine();
+
         // cancel button to leave if changed mind
         if (ImGui::Button("Cancel"))
         {
@@ -187,19 +187,65 @@ void WindowClass::renameFilePopup()
         }
 
 
-        if (ImGui::Button("Save"))
-        {
-            auto new_filename = select_Entry.parent_path() / buffer_name;
-
-            ImGui::CloseCurrentPopup();
-        }
 
         ImGui::EndPopup();
     }
 }
 void WindowClass::deleteFilePopup()
 {
-    if (ImGui::BeginPopupModal("Delete File"))
+    // When the delete button is clicked
+    if (ImGui::BeginPopupModal("Delete File", &deleteDialogOpen)){
+        // message popup to verify delete
+        ImGui::Text("Are you sure you want to delete - %s?",
+                    select_Entry.filename().string().c_str());
+
+        if (ImGui::Button("Yes"))
+        {
+            // match selected entry to delete
+            if (deleteFile(select_Entry))
+            {
+                // clear the delete file/delete
+                select_Entry.clear();
+            }
+            // close popup
+            deleteDialogOpen = false;
+        }
+
+        ImGui::SameLine();
+
+        // if no, just close popup
+        if (ImGui::Button("No"))
+        {
+            deleteDialogOpen = false;
+        }
+        ImGui::EndPopup();
+    }
+}
+
+
+bool WindowClass::renameFile(const fs::path &old_path, const fs::path &new_path)
+{
+    try {
+        fs::rename(old_path, new_path);
+        return true;
+    }
+    catch (const std::exception &e)
     {
+        std::cerr << e.what();
+        return false;
+    }
+
+}
+
+bool WindowClass::deleteFile(const fs::path& path) {
+    try
+    {
+        fs::remove(path);
+        return true;
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << e.what();
+        return false;
     }
 }

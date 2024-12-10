@@ -25,8 +25,7 @@ void WindowClass::Draw(std::string_view label)
     DrawActions();
 
     // stack size must be the same as the entrance of the program. Begin()
-    ImGui::
-        End(); // stack size decrement by 1  -> will result in stack error if no othe end method when calling multiple begin methods
+    ImGui::End(); // stack size decrement by 1  -> will result in stack error if no othe end method when calling multiple begin methods
 }
 
 void render(WindowClass &window_obj)

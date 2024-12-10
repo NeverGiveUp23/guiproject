@@ -19,6 +19,9 @@ public:
 private:
     fs::path currentDir;
     fs::path select_Entry;
+
+    bool renameDialogOpen = false;
+    bool deleteDialogOpen = false;
     
 
 private:
@@ -29,6 +32,8 @@ private:
     void OpenFileWDefaultEditor();
     void renameFilePopup();
     void deleteFilePopup();
+    bool renameFile(const fs::path &old_path, const fs::path &new_path);
+    bool deleteFile(const fs::path &path);
 };
 
 void render(WindowClass &window_obj);
