@@ -1,3 +1,10 @@
+/*
+This is the window functions for the file explorer section of the gui.
+
+*/
+
+
+
 #include <iostream>
 
 #include <fmt/format.h>
