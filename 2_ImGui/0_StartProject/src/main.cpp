@@ -12,7 +12,7 @@
 #endif
 #include <GLFW/glfw3.h>
 
-#include "render.hpp"
+#include "rendergui/render.hpp"
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1900) &&                                 \
     !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
