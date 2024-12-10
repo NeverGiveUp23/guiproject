@@ -1,9 +1,6 @@
 /*
 This is the window functions for the file explorer section of the gui.
-
 */
-
-
 
 #include <iostream>
 
