@@ -7,6 +7,7 @@ This is the window functions for the file explorer section of the gui.
 #include <fmt/format.h>
 #include <imgui.h>
 #include <implot.h>
+#include <string>
 
 #include "rendergui/render.hpp"
 
@@ -31,7 +32,9 @@ void WindowClass::DrawContent()
                 is_selected)) { // display just the last portion of the file path -> and just want to output a string
             if (is_Dir){
                 currentDir /= entry.path().filename();
-            } else {
+            }
+            else
+            {
                 select_Entry = entry.path();
             }
         }
@@ -43,37 +46,55 @@ void WindowClass::DrawMenu()
 {
     ImGui::Text("Hello Menu");
     // when button is clicked -> adjusting button size
-    if (ImGui::Button("Up")){
+    if (ImGui::Button("Back")){
         if (currentDir.has_parent_path()) // checking if user is at the root level
         {
             currentDir = currentDir.parent_path();
         }
     }
 
-    /* if (ImGui::Button("Down")) {
-         if (currentDir == currentDir.parent_path())
-         {
-             currentDir = currentDir;
-         }
-     }*/
-
     ImGui::SameLine();
 
     ImGui::Text(
         "Current Directory: %s",
-        currentDir.string()
+        currentDir.parent_path()
+            .string()
             .c_str()); // display current Directory -> convert to string before so all OS has the same behaivior
+
+    
+}
+
+
+void WindowClass::displayPerm(fs::perms p)
+{
+    auto show = [=](char op, fs::perms perm) {
+        auto noPerm = (fs::perms::none == (perm & p) ? '-' : op);
+        ImGui::SameLine();
+        ImGui::Text("%c", noPerm);
+    };
+
+    show('r', fs::perms::owner_read);
+    show('w', fs::perms::owner_write);
+    show('x', fs::perms::owner_exec);
+    show('r', fs::perms::group_read);
+    show('w', fs::perms::group_write);
+    show('x', fs::perms::group_exec);
+    show('r', fs::perms::others_read);
+    show('w', fs::perms::others_write);
+    show('x', fs::perms::others_exec);
 }
 
 void WindowClass::DrawActions()
 {
+
     // display current selected Dir
     if (fs::is_directory(select_Entry)) {
         ImGui::Text("Selected Dir: %s", select_Entry.string().c_str());
     }
     // display if selected a file
     else if (fs::is_regular_file(select_Entry)) {
-        ImGui::Text("Selected file: %s", select_Entry.string().c_str());
+        ImGui::Text("Selected file: %s", select_Entry.filename().string().c_str());
+        displayPerm(fs::status(select_Entry).permissions());
     }
     else {
         ImGui::Text("Nothing Selected");
@@ -95,6 +116,7 @@ void WindowClass::DrawActions()
     }
     deleteFilePopup();
 
+    // checking to see if entry is a file for open button and function
     if (fs::is_regular_file(select_Entry) && ImGui::Button("Open")) { //checking if the selected is a file to be opened
         OpenFileWDefaultEditor(); // allowing the file to be opened by editor like Notepad++ for example.
     }
@@ -133,7 +155,7 @@ void WindowClass::DrawFilter()
 
     //  count variable for # of files in dir
     auto filter_count = std::size_t{0};
-    for (const auto &entry : fs::directory_iterator( currentDir)) // iterate thought the entrie directory
+    for (const auto &entry : fs::directory_iterator(currentDir)) // iterate thought the entrie directory
     {
         // if not a file, just ignore and continue
         if (!fs::is_regular_file(entry))
@@ -147,11 +169,21 @@ void WindowClass::DrawFilter()
         }
     }
     // display count
-    ImGui::Text("Number of files: %u", filter_count);
+    ImGui::Text("Number of %s files: %u", ext_filter, filter_count);
 }
 
-void WindowClass::OpenFileWDefaultEditor()
-{
+
+// open file from gui
+void WindowClass::OpenFileWDefaultEditor(){
+    #ifdef _WIN32
+        const auto command = "start \"\" \"" + select_Entry.string() + "\"";
+    #elif __APPLE__
+        const auto command = "open \"" + select_Entry.string() + "\"";
+    #else
+        const auto command = "xdg-open \"" + select_Entry.string() + "\"";
+    #endif
+
+    std::system(command.c_str());
 }
 
 void WindowClass::renameFilePopup()
