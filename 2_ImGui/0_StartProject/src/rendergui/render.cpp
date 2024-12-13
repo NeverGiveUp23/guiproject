@@ -11,8 +11,8 @@ void WindowClass::Draw(std::string_view label)
 
 
     /*constexpr static auto window_flags = ImGuiWindowFlags_NoMove;*/ // flags for the window to not move for the user (Test)
-    constexpr static auto windowSize = ImVec2(0.0F, 0.0F);
-    ImGui::SetNextWindowPos(windowSize); // adjusting the window size
+   // constexpr static auto windowSize = ImVec2(0.0F, 0.0F);
+   // ImGui::SetNextWindowPos(windowSize); // adjusting the window size
 
     // ImGui works like atack -> pushing the window on the stack.
     ImGui::Begin(label.data()); // stack size 1 // Putting in and testing window flags for project

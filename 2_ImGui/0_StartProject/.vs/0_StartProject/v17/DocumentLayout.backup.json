@@ -15,10 +15,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\rendergui\\render.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\tedt.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\rendergui\\tedt.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,19 +51,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "tedt.txt",
-              "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\tedt.txt",
-              "RelativeDocumentMoniker": "src\\rendergui\\tedt.txt",
-              "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\tedt.txt",
-              "RelativeToolTip": "src\\rendergui\\tedt.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-10T04:30:35.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
@@ -75,8 +58,7 @@
               "RelativeToolTip": "src\\main.cpp",
               "ViewState": "AgIAABsAAAAAMzMzM5MwwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-10T00:17:10.936Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T00:17:10.936Z"
             },
             {
               "$type": "Document",
@@ -86,7 +68,7 @@
               "RelativeDocumentMoniker": "src\\fileexplorer\\window.cpp",
               "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\fileexplorer\\window.cpp",
               "RelativeToolTip": "src\\fileexplorer\\window.cpp",
-              "ViewState": "AgIAALsAAADAzczMzAwswMUAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T00:10:12.395Z",
               "EditorCaption": ""
@@ -101,8 +83,7 @@
               "RelativeToolTip": "src\\rendergui\\render.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-09T21:33:07.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T21:33:07.867Z"
             },
             {
               "$type": "Document",
@@ -114,8 +95,7 @@
               "RelativeToolTip": "src\\rendergui\\render.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-09T19:26:00.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-09T19:26:00.883Z"
             }
           ]
         }
