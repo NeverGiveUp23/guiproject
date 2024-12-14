@@ -94,7 +94,7 @@ void WindowClass::DrawActions()
     // display if selected a file
     else if (fs::is_regular_file(select_Entry)) {
         ImGui::Text("Selected file: %s", select_Entry.filename().string().c_str());
-        displayPerm(fs::status(select_Entry).permissions());
+        ImGui::Text("Permissions: %i", fs::status(select_Entry).permissions());
     }
     else {
         ImGui::Text("Nothing Selected");

@@ -13,6 +13,7 @@
 #include <GLFW/glfw3.h>
 
 #include "rendergui/render.hpp"
+#include "plotting/plotting.hpp"
 
 #if defined(_MSC_VER) && (_MSC_VER >= 1900) &&                                 \
     !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
@@ -107,6 +108,7 @@ int main(int, char **)
     style.Colors[ImGuiCol_TableBorderLight] = ImVec4(1.0, 1.0, 1.0, 1.0);
 
     WindowClass window_obj;
+    PlottingClass plotting_obj;
 
     while (!glfwWindowShouldClose(window))
     {
@@ -115,6 +117,7 @@ int main(int, char **)
         ImGui::NewFrame();
         ImPlot::CreateContext();
         render(window_obj);
+        renderPlot(plotting_obj);
         ImGui::Render();
 
         end_cycle(window);

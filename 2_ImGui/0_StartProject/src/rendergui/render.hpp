@@ -6,6 +6,7 @@
 
 
 namespace fs = std::filesystem;
+using namespace std;
 
 class WindowClass
 {
@@ -36,6 +37,8 @@ private:
     bool renameFile(const fs::path &old_path, const fs::path &new_path);
     bool deleteFile(const fs::path &path);
     void displayPerm(fs::perms p);
+
+
 };
 
 void render(WindowClass &window_obj);

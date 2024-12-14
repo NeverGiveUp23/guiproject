@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\plotting\\plotting.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\fileexplorer\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\fileexplorer\\window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -13,6 +17,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\rendergui\\render.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\plotting\\plotting.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plottingRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\plotting\\plottingRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,39 +58,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "window.cpp",
               "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\fileexplorer\\window.cpp",
               "RelativeDocumentMoniker": "src\\fileexplorer\\window.cpp",
               "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\fileexplorer\\window.cpp",
               "RelativeToolTip": "src\\fileexplorer\\window.cpp",
-              "ViewState": "AgIAAKAAAAAAcv////8UwLYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAzczMzIwjwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-10T00:10:12.395Z",
+              "WhenOpened": "2024-12-13T23:07:36.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "plotting.cpp",
+              "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.cpp",
+              "RelativeDocumentMoniker": "src\\plotting\\plotting.cpp",
+              "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.cpp",
+              "RelativeToolTip": "src\\plotting\\plotting.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T22:01:59.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "plottingRender.cpp",
+              "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plottingRender.cpp",
+              "RelativeDocumentMoniker": "src\\plotting\\plottingRender.cpp",
+              "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plottingRender.cpp",
+              "RelativeToolTip": "src\\plotting\\plottingRender.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-13T21:35:20.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "plotting.hpp",
+              "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.hpp",
+              "RelativeDocumentMoniker": "src\\plotting\\plotting.hpp",
+              "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\plotting\\plotting.hpp",
+              "RelativeToolTip": "src\\plotting\\plotting.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-13T20:59:48.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "render.hpp",
               "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\render.hpp",
               "RelativeDocumentMoniker": "src\\rendergui\\render.hpp",
               "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\render.hpp",
               "RelativeToolTip": "src\\rendergui\\render.hpp",
-              "ViewState": "AgIAAAkAAACAyszMzMwewBsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-12-09T21:33:07.867Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "render.cpp",
               "DocumentMoniker": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\render.cpp",
               "RelativeDocumentMoniker": "src\\rendergui\\render.cpp",
               "ToolTip": "C:\\Users\\felix\\Desktop\\felixgui\\2_ImGui\\0_StartProject\\src\\rendergui\\render.cpp",
               "RelativeToolTip": "src\\rendergui\\render.cpp",
-              "ViewState": "AgIAAAQAAADgy8zMzMwXwBgAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-09T19:26:00.883Z",
               "EditorCaption": ""
