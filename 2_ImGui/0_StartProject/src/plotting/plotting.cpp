@@ -5,6 +5,7 @@
 #include <format>
 #include <fmt/format.h>
 #include <imgui.h>
+#include <iomanip>
 #include <implot.h>
 #include <string_view>
 #include "plotting.hpp"
@@ -14,11 +15,20 @@ using namespace std;
 
 void PlottingClass::DrawPlot(){
 
-    static constexpr auto num_points = 10'000;
-    static constexpr auto x_min = -100.0;
-    static constexpr auto x_max = 100.0;
 
-    static const auto x_step = (abs(x_max) + abs(x_min)) / num_points;
+    static constexpr auto num_points = 10'000;
+    static auto x_min = -100.0;
+    static auto x_max = 500.0;
+
+    ImGui::Text("Input (SIN)");
+    ImGui::SameLine;
+    ImGui::InputDouble("###INPUT", &x_min);
+    ImGui::Text("Input (COS)");
+    ImGui::SameLine;
+    ImGui::InputDouble("###INPUTY", &x_max);
+
+
+    static auto x_step = (abs(x_min) + abs(x_max)) / num_points;
 
     static auto x_val = array<double, num_points>{};
     static auto y_val = array<double, num_points>{};

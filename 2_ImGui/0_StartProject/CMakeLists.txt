@@ -37,7 +37,7 @@ find_package(OpenGL REQUIRED)
 add_executable(${PROJECT_NAME}
     src/main.cpp
     "src/rendergui/render.cpp"
- "src/fileexplorer/window.cpp" "src/plotting/plottingRender.cpp" "src/plotting/plotting.cpp")
+ "src/fileexplorer/window.cpp" "src/plotting/plottingRender.cpp" "src/plotting/plotting.cpp" "src/textedititor/EditorRender.cpp")
 
 add_compile_definitions(NOMINMAX)
 
